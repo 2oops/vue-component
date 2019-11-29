@@ -12,6 +12,7 @@
 
 <script>
 import Emitter from '@/mixins/emitter'
+import { findBrotherComponents } from '@/utils/assist'
 
 function valueIn(value, list) {
   for(let i = 0; i < list.length; i ++) {
@@ -45,6 +46,10 @@ export default {
     this.$on('on-click', text => {
       console.log('>>>', text)
     })
+
+    // 找到其所有兄弟组件, 我们可以找到在home组件使用的两个button
+    let brothersComp = findBrotherComponents(this, 'i-button', true)
+    console.log(brothersComp)
   },
 
   methods: {
