@@ -14,7 +14,7 @@
 <script>
 import store from '@/vuex/store'
 
-import button from './common/button'
+import iButton from './common/button'
 
 export default {
   name: 'home',
@@ -29,7 +29,7 @@ export default {
   },
 
   components: {
-    'i-button': button
+    iButton
   },
 
   computed: {
