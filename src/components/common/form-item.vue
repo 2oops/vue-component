@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <label v-if="label">{{ label }}</label>
+  <div class="form-item">
+    <label v-if="label" :class="{ 'i-form-item-label-required': isRequired}">{{ label }}</label>
     <div>
       <slot></slot>
+      <div v-if="validateState === 'error'" class="i-form-item-message">{{validateMessage}}</div>
     </div>
   </div>
 </template>
@@ -29,6 +30,7 @@ export default {
 
   data() {
     return {
+      isRequired: false,
       validateState: '', // 校验状态
       validateMessage: '' // 校验信息
     }
@@ -49,13 +51,27 @@ export default {
     if(this.prop) {
       // 子组件分发
       this.dispatch('iForm', 'on-form-item-add', this)
+      this.initialValue = this.fieldValue
     }  
   },
 
   methods: {
     setRules() {
+      let rules = this.getRules()
+      if(rules.length) {
+        rules.every((rule) => {
+          this.isRequired = rule.required
+        })
+      }
+
       this.$on('on-form-blur', this.onFieldBlur)
       this.$on('on-form-change', this.onFieldChange)
+    },
+
+    resetField() {
+      this.validateState = ''
+      this.validateMessage = ''
+      this.form.model[this.prop] = this.initialValue
     },
 
     onFieldBlur() {
@@ -112,7 +128,24 @@ export default {
 
   beforeDestroy() {
     // 组件销毁时将实例从form中移除
-    tis.dispatch('iFrom', 'remove-form-item', this)
+    this.dispatch('iFrom', 'remove-form-item', this)
   }
 }
 </script>
+
+<style lang="less">
+  .form-item {
+    margin-bottom: 20px;
+  }
+  .i-form-item-label-required {
+    
+    &::before {
+      content: '*';
+      color: red;
+    }
+  }
+  .i-form-item-message {
+    color: red;
+    font-size: 16px;
+  }
+</style>

@@ -64,7 +64,7 @@ function findBrotherComponents(context, componentName, exceptSelf = true) {
   let res = context.$parent.$children.filter(item => {
     return item.$options.name === componentName
   })
-  console.log(">>", res)
+  
   let index = res.findIndex(item => item._uid === context._uid)
   
   if(exceptSelf) res.splice(index, 1)

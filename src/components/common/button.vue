@@ -44,17 +44,17 @@ export default {
   mounted() {
     // $on监听子组件本身触发的事件
     this.$on('on-click', text => {
-      console.log('>>>', text)
+      // console.log('>>>', text)
     })
 
     // 找到其所有兄弟组件, 我们可以找到在home组件使用的两个button
     let brothersComp = findBrotherComponents(this, 'i-button', true)
-    console.log(brothersComp)
+    // console.log(brothersComp)
   },
 
   methods: {
     handleClick(event) {
-      console.log('native')
+      // console.log('native')
       this.$emit('on-click', event)
       this.dispatch('home', "dispatch-msg", 'this is a dispatch message')
     }
