@@ -4,6 +4,7 @@ import Home from '@/components/home'
 import Emitter from '@/components/parent'
 import List from '@/components/list'
 import Error from '@/components/error'
+import Alert from '@/components/alert'
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/emitter',
       name: 'Emitter',
       component: Emitter
+    },
+    {
+      path: '/alert',
+      name: 'Alert',
+      component: Alert
     },
     {
       path: '/list',

@@ -8,6 +8,7 @@
     </i-button>
     <i-button disabled>Disabled</i-button>
     <i-button @click.native="nativeClick">Primary</i-button>
+    <i-button @on-click="alert">Alert</i-button>
   </div>
 </template>
 
@@ -43,6 +44,13 @@ export default {
   },
 
   methods: {
+    alert() {
+      this.$Alert.info({
+        content: 'hello',
+        duration: 3
+      })
+    },
+
     showMsg(msg) {
       console.log(msg)
     },
