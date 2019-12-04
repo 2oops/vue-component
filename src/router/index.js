@@ -6,6 +6,7 @@ import List from '@/components/list'
 import Error from '@/components/error'
 import Alert from '@/components/alert'
 import Table from '@/components/table'
+import TableSlot from '@/components/table-slot'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/table',
       name: 'Table',
       component: Table
+    },
+    {
+      path: '/table-slot',
+      name: 'TableSlot',
+      component: TableSlot
     },
     {
       path: '*',
