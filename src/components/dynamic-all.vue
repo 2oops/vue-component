@@ -20,6 +20,7 @@
         component: componentA
       }
     },
+    
     methods: {
       handleChange (component) {
         if (component === 'A') {
