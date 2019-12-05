@@ -1,15 +1,6 @@
 <template>
   <div>
     <table-render :columns="columns" :data="data"></table-render>
-
-    <!-- <slot :book="book" name="book">
-      {{book.name}}
-    </slot>
-
-    <template slot-scope="{book}" slot="book">
-      <span v-if="book.sale">限时优惠</span>
-      {{ book.name }}
-    </template> -->
   </div>
 </template>
 
