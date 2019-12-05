@@ -7,6 +7,7 @@ import Error from '@/components/error'
 import Alert from '@/components/alert'
 import Table from '@/components/table'
 import TableSlot from '@/components/table-slot'
+// import Dynamic from '@/components/dynamic'
 
 Vue.use(Router)
 
@@ -41,6 +42,16 @@ export default new Router({
       path: '/table-slot',
       name: 'TableSlot',
       component: TableSlot
+    },
+    {
+      path: '/dynamic',
+      name: 'Dynamic',
+      component: () => import('@/components/dynamic')
+    },
+    {
+      path: '/dynamic-all',
+      name: 'DynamicAll',
+      component: () => import('@/components/dynamic-all')
     },
     {
       path: '*',
