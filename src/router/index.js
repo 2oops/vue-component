@@ -54,6 +54,11 @@ export default new Router({
       component: () => import('@/components/dynamic-all')
     },
     {
+      path: '/tree',
+      name: 'Tree',
+      component: () => import('@/components/tree')
+    },
+    {
       path: '*',
       component: Error
     },
