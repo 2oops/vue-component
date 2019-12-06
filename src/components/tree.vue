@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>实战 7：树形控件 —— Tree</h3>
+    <h3>树形控件 —— Tree</h3>
 
     <Tree
       :data="data"
