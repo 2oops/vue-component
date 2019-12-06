@@ -4,9 +4,5 @@ root = true
 charset = utf-8
 indent_style = space
 indent_size = 2
-<<<<<<< HEAD
-=======
-end_of_line = lf
->>>>>>> 2a0f57699983f56cec9f147343a4e5f53f8e4dfa
 insert_final_newline = true
 trim_trailing_whitespace = true
