@@ -7,7 +7,6 @@ import Error from '@/components/error'
 import Alert from '@/components/alert'
 import Table from '@/components/table'
 import TableSlot from '@/components/table-slot'
-// import Dynamic from '@/components/dynamic'
 
 Vue.use(Router)
 
